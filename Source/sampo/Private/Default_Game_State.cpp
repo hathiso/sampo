@@ -19,5 +19,5 @@ void ADefault_Game_State::On_change_stats_damage(float flat_damage_value, float 
 	float multiplier_out_plaeyr_of_medicine_damage, float multiplier_out_plaeyr_of_mele_damage,
 	float multiplier_out_plaeyr_of_mex_damage)
 {
-	UE_LOG(Game_State_Default, Display, TEXT("flat_damage_value=%f,multiplier_out_plaeyr_of_magic_damage=%f,multiplier_out_plaeyr_of_medicine_damage=%f,multiplier_out_plaeyr_of_mele_damage=%f,multiplier_out_plaeyr_of_mex_damage=%f"), flat_damage_value, multiplier_out_plaeyr_of_magic_damage, multiplier_out_plaeyr_of_medicine_damage, multiplier_out_plaeyr_of_mele_damage, multiplier_out_plaeyr_of_mex_damage);
+	UE_LOG(Game_State_Default, Display, TEXT("flat_damage_value=%f,multiplier_out_plaeyr_of_magic_damage = %f,multiplier_out_plaeyr_of_medicine_damage = %f,multiplier_out_plaeyr_of_mele_damage = %f,multiplier_out_plaeyr_of_mex_damage = %f"), flat_damage_value, multiplier_out_plaeyr_of_magic_damage, multiplier_out_plaeyr_of_medicine_damage, multiplier_out_plaeyr_of_mele_damage, multiplier_out_plaeyr_of_mex_damage);
 }

@@ -18,6 +18,10 @@ void UDefault_User_Widget::NativeConstruct()
 	if (texture_1)
 	image_skill_aa->SetBrushFromSoftTexture(texture_1);
 }
+FTimerManager& UDefault_User_Widget::GetWorldTimerManager() const
+{
+	return GetWorld()->GetTimerManager();
+}
 //--------------------------------------------------------------------------------------------------
 void UDefault_User_Widget::Show_HP_Change(float on_hp_plaeyr, float on_max_hp_plaeyr)
 {
@@ -26,5 +30,36 @@ void UDefault_User_Widget::Show_HP_Change(float on_hp_plaeyr, float on_max_hp_pl
 	hp_text->SetText(FText::AsNumber(on_hp_plaeyr));
 	hp_progress_bar->SetPercent((on_hp_plaeyr/(on_max_hp_plaeyr/100)/100));
 	image_skill_aa->SetVisibility(ESlateVisibility::Visible);
+}
+//--------------------------------------------------------------------------------------------------
+
+
+
+
+//--------------------------------------------------------------------------------------------------
+void UDefault_User_Widget::Show_Skill_AA_KD_Change(float skill_aa_kd)
+{
+	float timer_meter_skill_aa_kd;
+	if (show_skill_aa_timer.IsValid())
+	{
+		GetWorldTimerManager().SetTimer(show_skill_aa_timer, this, &ThisClass::Show_Skill_AA_KD_Change, one_sec, true,0.0f);
+		timer_meter_skill_aa_kd = skill_aa_kd;
+	}
+	else
+		timer_meter_skill_aa_kd = timer_meter_skill_aa_kd - 1;
+	if(timer_meter_skill_aa_kd<=0)
+		GetWorldTimerManager().ClearTimer(show_skill_aa_timer);
+}
+void UDefault_User_Widget::Show_Skill_1_KD_Change(float skill_1_kd)
+{
+	//GetWorld()->GetTimerManager().SetTimer(show_skill_1_timer, this, &ThisClass::Show_Skill_AA_KD_Change, 1, true);
+}
+void UDefault_User_Widget::Show_Skill_2_KD_Change(float skill_2_kd)
+{
+	//GetWorld()->GetTimerManager().SetTimer(show_skill_1_timer, this, &ThisClass::Show_Skill_AA_KD_Change, 1, true);
+}
+void UDefault_User_Widget::Show_Skill_Base_Defense_KD_Change(float skill_base_defense_kd)
+{
+	//GetWorld()->GetTimerManager().SetTimer(show_skill_1_timer, this, &ThisClass::Show_Skill_AA_KD_Change, 1, true);
 }
 //--------------------------------------------------------------------------------------------------
