@@ -30,14 +30,21 @@ void AMele_Paper_ZD_Character::Tick(float DeltaTime)
 void AMele_Paper_ZD_Character::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
+
 	APlayerController* PlayerController = Cast<APlayerController>(GetController());
+	
 	UEnhancedInputLocalPlayerSubsystem *sub_system_input = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PlayerController->GetLocalPlayer());
+	
 	sub_system_input->ClearAllMappings();
 	sub_system_input->AddMappingContext(Input_Mapping_Context, 0);
+	
 	UEnhancedInputComponent *Input = Cast<UEnhancedInputComponent>(PlayerInputComponent);
+	
 	Input->BindAction(Move_Jump_Action, ETriggerEvent::Triggered, this, &AMele_Paper_ZD_Character::Move_Jump);
 	//Input->BindAction("Move_Jump", IE_Pressed, this, &AMele_Paper_ZD_Character::Move_Jump);
 	//InputComponent->BindAxis("Move_RL", this, &AMele_Paper_ZD_Character::Move_RL);
+	
+	
 	GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Blue, "set_input");
 }
 //--------------------------------------------------------------------------------------------------
@@ -50,6 +57,7 @@ void AMele_Paper_ZD_Character::SetupPlayerInputComponent(UInputComponent* Player
 void AMele_Paper_ZD_Character::Move_Jump(const FInputActionValue& Value)
 {
 	GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Blue, "Jump");
+	
 	ACharacter::Jump();
 }
 //--------------------------------------------------------------------------------------------------

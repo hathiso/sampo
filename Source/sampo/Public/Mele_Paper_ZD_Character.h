@@ -5,7 +5,6 @@
 #include "Mele_Paper_ZD_Character.generated.h"
 //#include "InputActionValue.h"
 
-class UInputMappingContext;
 //--------------------------------------------------------------------------------------------------
 UCLASS()
 class SAMPO_API AMele_Paper_ZD_Character : public APaperZDCharacter
@@ -14,7 +13,7 @@ class SAMPO_API AMele_Paper_ZD_Character : public APaperZDCharacter
 	FVector LocStart;
 public:
 	UPROPERTY(EditDefaultsOnly, Category = "EnhancedInput")
-	UInputMappingContext* Input_Mapping_Context;
+	class UInputMappingContext* Input_Mapping_Context;
 	FVector CurrentVelocity;
 	virtual void PostLoad();
 	virtual void Tick(float DeltaTime);
