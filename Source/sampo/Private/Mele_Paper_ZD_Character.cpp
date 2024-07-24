@@ -3,18 +3,22 @@
 #include "EnhancedInputComponent.h"
 #include "InputAction.h"
 #include "InputMappingContext.h"
+#include "Components/BoxComponent.h"
 
 //--------------------------------------------------------------------------------------------------
-//AMele_Paper_ZD_Character::AMele_Paper_ZD_Character()
-//{
-//	PrimaryActorTick.bCanEverTick = true;
-//	AutoPossessPlayer = EAutoReceiveInput::Player0;
-//}
+AMele_Paper_ZD_Character::AMele_Paper_ZD_Character()
+{
+	//box_skill_colision = CreateDefaultSubobject<UBoxComponent>(TEXT("box_skill"));
+	//check(box_skill_colision);
+	//box_skill_colision->OnComponentBeginOverlap.AddDynamic(this, &ThisClass::On_Hit_projectile);
+}
 //--------------------------------------------------------------------------------------------------
 void AMele_Paper_ZD_Character::PostLoad()
 {
 	Super::PostLoad();
+
 	AutoPossessPlayer = EAutoReceiveInput::Player0;
+	
 	GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Blue, "On_Spavn_Plaer");
 }
 //--------------------------------------------------------------------------------------------------
@@ -41,6 +45,11 @@ void AMele_Paper_ZD_Character::SetupPlayerInputComponent(UInputComponent* Player
 	UEnhancedInputComponent *Input = Cast<UEnhancedInputComponent>(PlayerInputComponent);
 	
 	Input->BindAction(Move_Jump_Action, ETriggerEvent::Triggered, this, &AMele_Paper_ZD_Character::Move_Jump);
+	Input->BindAction(Move_RL_Action, ETriggerEvent::Triggered, this, &AMele_Paper_ZD_Character::Move_RL);
+	Input->BindAction(Skill_AA_Action, ETriggerEvent::Triggered, this, &AMele_Paper_ZD_Character::Skill_AA);
+	Input->BindAction(Skill_1_Action, ETriggerEvent::Triggered, this, &AMele_Paper_ZD_Character::Skill_1);
+	Input->BindAction(Skill_2_Action, ETriggerEvent::Triggered, this, &AMele_Paper_ZD_Character::Skill_2);
+	Input->BindAction(Skill_BaseDefense_Action, ETriggerEvent::Triggered, this, &AMele_Paper_ZD_Character::Skill_BaseDefense);
 	//Input->BindAction("Move_Jump", IE_Pressed, this, &AMele_Paper_ZD_Character::Move_Jump);
 	//InputComponent->BindAxis("Move_RL", this, &AMele_Paper_ZD_Character::Move_RL);
 	
@@ -48,16 +57,52 @@ void AMele_Paper_ZD_Character::SetupPlayerInputComponent(UInputComponent* Player
 	GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Blue, "set_input");
 }
 //--------------------------------------------------------------------------------------------------
-//void AMele_Paper_ZD_Character::Move_RL(float AxisValue)
-//{
-//	CurrentVelocity.X = FMath::Clamp(AxisValue, -1.0f, 1.0f) * 100.0f;
-//	GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Blue, "Move");
-//}
-//--------------------------------------------------------------------------------------------------
-void AMele_Paper_ZD_Character::Move_Jump(const FInputActionValue& Value)
+void AMele_Paper_ZD_Character::Skill_AA()
 {
-	GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Blue, "Jump");
+
+}
+//--------------------------------------------------------------------------------------------------
+void AMele_Paper_ZD_Character::Skill_1()
+{
+
+}
+////--------------------------------------------------------------------------------------------------
+void AMele_Paper_ZD_Character::Skill_2()
+{
+
+}
+//--------------------------------------------------------------------------------------------------
+void AMele_Paper_ZD_Character::Skill_BaseDefense()
+{
+
+}
+//--------------------------------------------------------------------------------------------------
+void AMele_Paper_ZD_Character::Move_Jump()
+{
+	//GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Blue, "Jump");
 	
 	ACharacter::Jump();
 }
 //--------------------------------------------------------------------------------------------------
+void AMele_Paper_ZD_Character::Move_RL(const FInputActionValue &value)
+{
+	
+	//GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Blue, "Move:value"+value.ToString());
+
+	FVector2D move_vector = value.Get<FVector2D>();
+	move_vector.Y = move_vector.X * 10;
+	//GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Blue, "Move2:value" + move_vector.ToString());
+	AddMovementInput(GetActorForwardVector(), move_vector.Y);
+	
+}
+//--------------------------------------------------------------------------------------------------
+void AMele_Paper_ZD_Character::On_Hit_projectile(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Red, "tuch");
+	//on_hp_plaeyr_event.Broadcast(hp_plaeyr);
+}
+//--------------------------------------------------------------------------------------------------
+//Fhp_change& AMele_Paper_ZD_Character::get_hp_plaeyr()
+//{
+//	return on_hp_plaeyr_event;
+//}

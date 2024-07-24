@@ -6,7 +6,8 @@
 #include "UObject/Interface.h"
 #include "Stats_Character_Interface.generated.h"
 
-// This class does not need to be modified.
+
+
 UINTERFACE(MinimalAPI)
 class UStats_Character_Interface : public UInterface
 {
@@ -20,6 +21,6 @@ class SAMPO_API IStats_Character_Interface
 {
 	GENERATED_BODY()
 
-	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
+
 };

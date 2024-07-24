@@ -43,20 +43,44 @@
     <Filter Include="Source\sampo\Private">
       <UniqueIdentifier>{8BBF4D0E-81A9-341F-B4A2-5DC03291C1D5}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\sampo\Private\Default_HUD_Player.cpp">
+      <Filter>Source\sampo\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\sampo\Private\Default_User_Widget.cpp">
+      <Filter>Source\sampo\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\sampo\Private\Mele_Paper_ZD_Character.cpp">
       <Filter>Source\sampo\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\sampo\Private\PVP_Game_Mode.cpp">
       <Filter>Source\sampo\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\sampo\Private\Stats_Character_Interface_Test.cpp">
+      <Filter>Source\sampo\Private</Filter>
+    </ClCompile>
     <Filter Include="Source\sampo\Public">
       <UniqueIdentifier>{FEB5D825-BD49-3394-A479-1EACE3D33539}</UniqueIdentifier>
     </Filter>
+    <ClInclude Include="..\..\Source\sampo\Public\Default_HUD_Player.h">
+      <Filter>Source\sampo\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\sampo\Public\Default_User_Widget.h">
+      <Filter>Source\sampo\Public</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\sampo\Public\Mele_Paper_ZD_Character.h">
       <Filter>Source\sampo\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\sampo\Public\PVP_Game_Mode.h">
       <Filter>Source\sampo\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\sampo\Public\Stats_Character_Interface_Test.h">
+      <Filter>Source\sampo\Public</Filter>
+    </ClInclude>
+    <Filter Include="Source\sampo\Public\Interface">
+      <UniqueIdentifier>{910B077D-9CCB-35B9-908F-3F06D12BA691}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\sampo\Public\Interface\Stats_Character_Interface.h">
+      <Filter>Source\sampo\Public\Interface</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
