@@ -275,14 +275,10 @@
     <ClCompile Include="..\..\Source\sampo\Private\PVP_Game_Mode.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
-    <ClCompile Include="..\..\Source\sampo\Private\Stats_Character_Interface_Test.cpp">
-      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ClCompile>
     <ClInclude Include="..\..\Source\sampo\Public\Default_HUD_Player.h"/>
     <ClInclude Include="..\..\Source\sampo\Public\Default_User_Widget.h"/>
     <ClInclude Include="..\..\Source\sampo\Public\Mele_Paper_ZD_Character.h"/>
     <ClInclude Include="..\..\Source\sampo\Public\PVP_Game_Mode.h"/>
-    <ClInclude Include="..\..\Source\sampo\Public\Stats_Character_Interface_Test.h"/>
     <ClInclude Include="..\..\Source\sampo\Public\Interface\Stats_Character_Interface.h"/>
   </ItemGroup>
   <PropertyGroup>

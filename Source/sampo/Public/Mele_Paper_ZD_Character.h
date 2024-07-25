@@ -2,13 +2,13 @@
 
 #include "CoreMinimal.h"
 #include "PaperZDCharacter.h"
-//#include "Stats_Character_Interface_Test.h"
+#include "Interface/Stats_Character_Interface.h"
 #include "Mele_Paper_ZD_Character.generated.h"
 //#include "InputActionValue.h"
 
 //-------------------------------------------------------------------------------------------------------------------------------------------
 UCLASS()
-class SAMPO_API AMele_Paper_ZD_Character : public APaperZDCharacter//, public IStats_Character_Interface_Test
+class AMele_Paper_ZD_Character : public APaperZDCharacter, public IStats_Character_Interface
 {
 	GENERATED_BODY()
 	AMele_Paper_ZD_Character();
@@ -44,9 +44,9 @@ public:
 	UFUNCTION() virtual void Move_RL(const FInputActionValue &value);
 	UFUNCTION() virtual void On_Hit_projectile(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 //-------------------------------------------------------------------------------------------------------------------------------------------
-	//UPROPERTY()
-	//Fhp_change on_hp_plaeyr_event;
-	//virtual Fhp_change &get_hp_plaeyr() override;
+	UPROPERTY()
+	Fhp_change on_hp_plaeyr_event;
+	virtual Fhp_change &get_hp_plaeyr() override;
 protected:
 	virtual void PostLoad();
 	virtual void Tick(float DeltaTime);

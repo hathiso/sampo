@@ -55,9 +55,6 @@
     <ClCompile Include="..\..\Source\sampo\Private\PVP_Game_Mode.cpp">
       <Filter>Source\sampo\Private</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\sampo\Private\Stats_Character_Interface_Test.cpp">
-      <Filter>Source\sampo\Private</Filter>
-    </ClCompile>
     <Filter Include="Source\sampo\Public">
       <UniqueIdentifier>{FEB5D825-BD49-3394-A479-1EACE3D33539}</UniqueIdentifier>
     </Filter>
@@ -71,9 +68,6 @@
       <Filter>Source\sampo\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\sampo\Public\PVP_Game_Mode.h">
-      <Filter>Source\sampo\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\sampo\Public\Stats_Character_Interface_Test.h">
       <Filter>Source\sampo\Public</Filter>
     </ClInclude>
     <Filter Include="Source\sampo\Public\Interface">

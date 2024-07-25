@@ -102,7 +102,7 @@ void AMele_Paper_ZD_Character::On_Hit_projectile(UPrimitiveComponent* Overlapped
 	//on_hp_plaeyr_event.Broadcast(hp_plaeyr);
 }
 //--------------------------------------------------------------------------------------------------
-//Fhp_change& AMele_Paper_ZD_Character::get_hp_plaeyr()
-//{
-//	return on_hp_plaeyr_event;
-//}
+Fhp_change& AMele_Paper_ZD_Character::get_hp_plaeyr()
+{
+	return on_hp_plaeyr_event;
+}

@@ -4,7 +4,7 @@
 #include "GameFramework/HUD.h"
 #include "Default_HUD_Player.generated.h"
 
-
+//--------------------------------------------------------------------------------------------------
 UCLASS(Abstract)
 class SAMPO_API ADefault_HUD_Player : public AHUD
 {
