@@ -24,6 +24,7 @@ class SAMPO_API IStats_Character_Interface
 	GENERATED_BODY()
 
 public:
+	UFUNCTION()
 	virtual Fhp_change& get_hp_plaeyr() = 0;
 
 };

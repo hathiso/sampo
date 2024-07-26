@@ -98,8 +98,7 @@ void AMele_Paper_ZD_Character::Move_RL(const FInputActionValue &value)
 //--------------------------------------------------------------------------------------------------
 void AMele_Paper_ZD_Character::On_Hit_projectile(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Red, "tuch");
-	//on_hp_plaeyr_event.Broadcast(hp_plaeyr);
+	on_hp_plaeyr_event.Broadcast(hp_plaeyr);
 }
 //--------------------------------------------------------------------------------------------------
 Fhp_change& AMele_Paper_ZD_Character::get_hp_plaeyr()
