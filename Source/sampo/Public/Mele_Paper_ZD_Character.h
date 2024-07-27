@@ -44,7 +44,6 @@ public:
 	UFUNCTION() virtual void Move_RL(const FInputActionValue& value);
 	UFUNCTION() virtual void On_Hit_projectile(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 	//-------------------------------------------------------------------------------------------------------------------------------------------
-	UPROPERTY()
 	Fhp_change on_hp_plaeyr_event;
 	virtual Fhp_change& get_hp_plaeyr() override;
 protected:

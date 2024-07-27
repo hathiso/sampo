@@ -7,7 +7,7 @@
 #include "Stats_Character_Interface.generated.h"
 
 //--------------------------------------------------------------------------------------------------
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(Fhp_change, float, on_hp_plaeyr);
+DECLARE_MULTICAST_DELEGATE_TwoParams(Fhp_change, float/*on_hp_plaeyr*/, float/*on_max_hp_plaeyr*/);
 //--------------------------------------------------------------------------------------------------
 
 UINTERFACE(MinimalAPI)
@@ -24,7 +24,6 @@ class SAMPO_API IStats_Character_Interface
 	GENERATED_BODY()
 
 public:
-	UFUNCTION()
 	virtual Fhp_change& get_hp_plaeyr() = 0;
 
 };

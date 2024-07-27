@@ -18,7 +18,6 @@ void AMele_Paper_ZD_Character::PostLoad()
 	Super::PostLoad();
 
 	AutoPossessPlayer = EAutoReceiveInput::Player0;
-	
 	GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Blue, "On_Spavn_Plaer");
 }
 //--------------------------------------------------------------------------------------------------
@@ -80,7 +79,8 @@ void AMele_Paper_ZD_Character::Skill_BaseDefense()
 void AMele_Paper_ZD_Character::Move_Jump()
 {
 	//GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Blue, "Jump");
-	
+	hp_plaeyr = hp_plaeyr + 1;
+	on_hp_plaeyr_event.Broadcast(hp_plaeyr, max_hp_plaeyr);
 	ACharacter::Jump();
 }
 //--------------------------------------------------------------------------------------------------
@@ -98,7 +98,7 @@ void AMele_Paper_ZD_Character::Move_RL(const FInputActionValue &value)
 //--------------------------------------------------------------------------------------------------
 void AMele_Paper_ZD_Character::On_Hit_projectile(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	on_hp_plaeyr_event.Broadcast(hp_plaeyr);
+	on_hp_plaeyr_event.Broadcast(hp_plaeyr, max_hp_plaeyr);
 }
 //--------------------------------------------------------------------------------------------------
 Fhp_change& AMele_Paper_ZD_Character::get_hp_plaeyr()
