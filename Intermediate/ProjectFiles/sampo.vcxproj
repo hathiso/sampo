@@ -266,6 +266,9 @@
     <ClCompile Include="..\..\Source\sampo\Private\Default_HUD_Player.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <ClCompile Include="..\..\Source\sampo\Private\Default_Projectile_Actor.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
     <ClCompile Include="..\..\Source\sampo\Private\Default_User_Widget.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
@@ -276,6 +279,7 @@
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClInclude Include="..\..\Source\sampo\Public\Default_HUD_Player.h"/>
+    <ClInclude Include="..\..\Source\sampo\Public\Default_Projectile_Actor.h"/>
     <ClInclude Include="..\..\Source\sampo\Public\Default_User_Widget.h"/>
     <ClInclude Include="..\..\Source\sampo\Public\Mele_Paper_ZD_Character.h"/>
     <ClInclude Include="..\..\Source\sampo\Public\PVP_Game_Mode.h"/>

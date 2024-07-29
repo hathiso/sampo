@@ -46,6 +46,9 @@
     <ClCompile Include="..\..\Source\sampo\Private\Default_HUD_Player.cpp">
       <Filter>Source\sampo\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\sampo\Private\Default_Projectile_Actor.cpp">
+      <Filter>Source\sampo\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\sampo\Private\Default_User_Widget.cpp">
       <Filter>Source\sampo\Private</Filter>
     </ClCompile>
@@ -59,6 +62,9 @@
       <UniqueIdentifier>{FEB5D825-BD49-3394-A479-1EACE3D33539}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\sampo\Public\Default_HUD_Player.h">
+      <Filter>Source\sampo\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\sampo\Public\Default_Projectile_Actor.h">
       <Filter>Source\sampo\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\sampo\Public\Default_User_Widget.h">

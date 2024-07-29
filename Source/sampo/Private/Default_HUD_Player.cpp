@@ -1,6 +1,7 @@
 #include "Default_HUD_Player.h"
 #include "Blueprint/UserWidget.h"
 
+DEFINE_LOG_CATEGORY_STATIC(HUD_Default, All, All);//VeryVerbose,Verbose,Log,Display,Warning,Error,Fatal
 //--------------------------------------------------------------------------------------------------
 ADefault_HUD_Player::ADefault_HUD_Player() : Super()
 {
@@ -17,3 +18,4 @@ void ADefault_HUD_Player::BeginPlay()
 		UMG_Widget->AddToViewport();
 	}
 }
+//--------------------------------------------------------------------------------------------------
