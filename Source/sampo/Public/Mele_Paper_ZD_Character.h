@@ -38,7 +38,7 @@ public:
 	UPROPERTY(EditDefaultsOnly, Category = "EnhancedInput|Action") class UInputAction* Skill_Base_Defense_Action;
 	//UPROPERTY(EditDefaultsOnly, Category = "Default_Projectile") TSubclassOf<class ADefault_Projectile_Actor>  default_projectile_actor;
 	UPROPERTY(EditDefaultsOnly,meta = (BindComponent)) class UBoxComponent* box_skill_colision;
-	class UWorld* my_world;
+	//class UWorld* my_world;
 	//UPROPERTY(EditDefaultsOnly)
 	//TSubclassOf<class ADefault_Projectile_Actor> projctail;
 //-------------------------------------------------------------------------------------------------------------------------------------------

@@ -11,12 +11,12 @@ void UDefault_User_Widget::NativeConstruct()
 	Super::NativeConstruct();
 	IStats_Character_Interface* hp_value = Cast<IStats_Character_Interface>(GetOwningPlayerPawn());
 	if (hp_value)
-	{
 		hp_value->get_hp_plaeyr().AddUObject(this, &ThisClass::Show_HP_Change);
-	}
 	else
 		UE_LOG(Wiget_Default, Error, TEXT("Eroor Owning Player"));
-	//image_skill_aa->SetVisibility(Header);
+	image_skill_aa->SetVisibility(ESlateVisibility::Hidden);
+	if (texture_1)
+	image_skill_aa->SetBrushFromSoftTexture(texture_1);
 }
 //--------------------------------------------------------------------------------------------------
 void UDefault_User_Widget::Show_HP_Change(float on_hp_plaeyr, float on_max_hp_plaeyr)
@@ -25,5 +25,6 @@ void UDefault_User_Widget::Show_HP_Change(float on_hp_plaeyr, float on_max_hp_pl
 	UE_LOG(Wiget_Default, Display, TEXT("on_max_hp_plaeyr = %f"), on_max_hp_plaeyr);
 	hp_text->SetText(FText::AsNumber(on_hp_plaeyr));
 	hp_progress_bar->SetPercent((on_hp_plaeyr/(on_max_hp_plaeyr/100)/100));
+	image_skill_aa->SetVisibility(ESlateVisibility::Visible);
 }
 //--------------------------------------------------------------------------------------------------
