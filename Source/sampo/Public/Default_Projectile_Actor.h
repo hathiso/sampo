@@ -2,6 +2,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "GameFramework/ProjectileMovementComponent.h"
 #include "Default_Projectile_Actor.generated.h"
 
 
@@ -17,7 +18,8 @@ protected:
 	virtual void BeginPlay() override;
 	virtual void On_change_stats_damage(float flat_damage_value, float multiplier_out_plaeyr_of_magic_damage, float multiplier_out_plaeyr_of_medicine_damage, float multiplier_out_plaeyr_of_mele_damage, float multiplier_out_plaeyr_of_mex_damage);
 
-public:	
+public:
+	virtual UProjectileMovementComponent* get_projectile_movement();
 	virtual void Tick(float DeltaTime) override;
 	UPROPERTY(EditDefaultsOnly, meta = (BindComponent))
 	class UBoxComponent* box_projectile_colision;

@@ -8,13 +8,13 @@ DEFINE_LOG_CATEGORY_STATIC(Projectile_Default, All, All);//VeryVerbose,Verbose,L
 //--------------------------------------------------------------------------------------------------
 ADefault_Projectile_Actor::ADefault_Projectile_Actor()
 {
-	IStats_Character_Interface* damage_value = Cast<IStats_Character_Interface>(GetNetOwningPlayer());
+	/*IStats_Character_Interface* damage_value = Cast<IStats_Character_Interface>(getOw);
 	if (damage_value)
 	{
 		damage_value->get_damage_out().AddUObject(this, &ThisClass::On_change_stats_damage);
 	}
 	else
-		UE_LOG(Projectile_Default, Error, TEXT("Eroor Owning Player"));
+		UE_LOG(Projectile_Default, Error, TEXT("Eroor Owning Player"));*/
 	box_projectile_colision = CreateDefaultSubobject<UBoxComponent>(TEXT("box projectile colision"));
 	projectile_movement = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("Projectile Movement Component"));
 	projectile_movement->InitialSpeed = 300.0f;
@@ -37,4 +37,10 @@ void ADefault_Projectile_Actor::Tick(float DeltaTime)
 void ADefault_Projectile_Actor::On_change_stats_damage(float flat_damage_value, float multiplier_out_plaeyr_of_magic_damage, float multiplier_out_plaeyr_of_medicine_damage, float multiplier_out_plaeyr_of_mele_damage, float multiplier_out_plaeyr_of_mex_damage)
 {
 	UE_LOG(Projectile_Default, Display, TEXT("flat_damage_value=%f,multiplier_out_plaeyr_of_magic_damage=%f,multiplier_out_plaeyr_of_medicine_damage=%f,multiplier_out_plaeyr_of_mele_damage=%f,multiplier_out_plaeyr_of_mex_damage=%f"), flat_damage_value, multiplier_out_plaeyr_of_magic_damage, multiplier_out_plaeyr_of_medicine_damage, multiplier_out_plaeyr_of_mele_damage, multiplier_out_plaeyr_of_mex_damage);
+	projectile_movement->InitialSpeed = 700.0f;
+}
+
+UProjectileMovementComponent* ADefault_Projectile_Actor::get_projectile_movement()
+{
+	return projectile_movement;
 }

@@ -2,6 +2,8 @@
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
 #include "InputAction.h"
+#include "Default_Projectile_Actor.h"
+#include "GameFramework/ProjectileMovementComponent.h"
 #include "InputMappingContext.h"
 #include "Components/BoxComponent.h"
 DEFINE_LOG_CATEGORY_STATIC(Plaeyr_Default, All, All);//VeryVerbose,Verbose,Log,Display,Warning,Error,Fatal
@@ -65,8 +67,12 @@ void AMele_Paper_ZD_Character::Skill_1()
 {
 	UE_LOG(Plaeyr_Default, Display, TEXT("On_Skill_1_Plaeyr"));
 	on_damage_out_value.Broadcast(flat_damage_value, multiplier_out_plaeyr_of_magic_damage, multiplier_out_plaeyr_of_medicine_damage, multiplier_out_plaeyr_of_mele_damage, multiplier_out_plaeyr_of_mex_damage);
-	//if(projctail)
-	//GetWorld()->SpawnActor<ADefault_Projectile_Actor>(projctail, GetActorLocation(), GetActorRotation());
+	if(projctail)
+	{
+		FVector actor_location = GetActorLocation();
+		actor_location.X = actor_location.X + 100;
+		GetWorld()->SpawnActor<ADefault_Projectile_Actor>(projctail, actor_location, GetActorRotation());
+	}
 }
 //-------------------------------------------------------------------------------------------------------------------------------------------
 void AMele_Paper_ZD_Character::Skill_2()

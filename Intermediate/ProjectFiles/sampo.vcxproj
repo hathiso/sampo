@@ -263,6 +263,9 @@
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClInclude Include="..\..\Source\sampo\sampo.h"/>
+    <ClCompile Include="..\..\Source\sampo\Private\Default_Game_State.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
     <ClCompile Include="..\..\Source\sampo\Private\Default_HUD_Player.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
@@ -278,6 +281,7 @@
     <ClCompile Include="..\..\Source\sampo\Private\PVP_Game_Mode.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <ClInclude Include="..\..\Source\sampo\Public\Default_Game_State.h"/>
     <ClInclude Include="..\..\Source\sampo\Public\Default_HUD_Player.h"/>
     <ClInclude Include="..\..\Source\sampo\Public\Default_Projectile_Actor.h"/>
     <ClInclude Include="..\..\Source\sampo\Public\Default_User_Widget.h"/>
